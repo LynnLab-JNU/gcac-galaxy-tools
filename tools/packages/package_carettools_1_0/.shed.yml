@@ -1,0 +1,9 @@
+categories:
+        - Tool Dependency Packages
+description: Contains a tool dependency definition that downloads and compiles version carettools
+long_description: |
+        The long description here ...
+name: package_carettools_1_0
+owner: planemo
+remote_repository_url: 
+type: tool_dependency_definition

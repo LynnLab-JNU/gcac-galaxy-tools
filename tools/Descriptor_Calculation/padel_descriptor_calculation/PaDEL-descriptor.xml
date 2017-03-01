@@ -1,0 +1,144 @@
+<tool id="padel_descriptor" name="PaDEL-descriptor" version="1.0">
+<requirements>
+	<requirement type="set_environment">PADELPATH</requirement>
+</requirements>
+<stdio>
+        <exit_code range="1:" />
+</stdio>
+
+<description>"PaDEL Descriptor Calculation Tool"</description>
+
+<command><![CDATA[
+
+#if '.smi' in $input.name
+    /bin/mkdir -p $input.extra_files_path;
+    ln -sf $input $input.extra_files_path/molecule.smi;
+    /usr/bin/java   -jar \$PADELPATH/PaDEL-Descriptor.jar 
+                    -dir $input.extra_files_path/molecule.smi 
+                     $coordinate2d 
+		    -maxruntime $maxruntime 
+		    -waitingjobs $maxjob 
+		    -threads $thread 
+		     $detectaromaticity 
+		     $removesalt 
+		     $standardizenitro 
+		     $convert3d 
+		     $retain3d 
+		     $coordinate3d 
+		     $fingerprint 
+		     $retainorder 
+		    -file $descriptor -log > $log;
+    /bin/rm -rf $input.extra_files_path;
+#else
+    /usr/bin/java   -jar \$PADELPATH/PaDEL-Descriptor.jar 
+    		    -dir $input 
+                     $coordinate2d 
+		    -maxruntime $maxruntime 
+		    -waitingjobs $maxjob 
+		    -threads $thread 
+		     $detectaromaticity 
+		     $removesalt 
+		     $standardizenitro 
+		     $convert3d 
+		     $retain3d 
+		     $coordinate3d 
+		     $fingerprint 
+		     $retainorder 
+		    -file $descriptor -log > $log;
+#end if
+
+]]></command>
+
+    <inputs>
+	    <param format="sdf" name="input" type="data" label="sdf/smile/mol2 file" optional= "false"/>
+  		
+	    <param name="detectaromaticity" type="select" label="Detect the aroamaticity">
+        	<option value = "-detectaromaticity" selected="True" >YES</option>
+		    <option value = "" >NO</option>
+	    </param>
+
+	    <param name="removesalt" type="select" label="Remove salt">
+        	<option value = "-removesalt" selected="True" >YES</option>
+		    <option value = "" >NO</option>
+	    </param>
+       
+            <param name="standardizenitro" type="select" label="Standardize nitro groups">
+        	<option value = "-standardizenitro" selected="True" >YES</option>
+          	<option value = "" >NO</option>
+	    </param>
+       
+            <param name="maxruntime" type="integer" value="300000" label="Set run time for individual molecule" help="In miliseconds" >
+        	<validator type="empty_field" message="This field can't be left blank"/>
+	    </param>
+       
+            <param name="thread" type="integer" value="8" label="Workers for the job" help="Set number of threads. -1 for maximun " >
+        	<validator type="empty_field" message="This field can't be left blank"/>
+            </param>
+       
+            <param name="maxjob" type="integer" value="-1" label="Maximum waiting job per thread. " help="Put -1 for maximum uitility or put positive inetger values upto 50" >
+        	<validator type="empty_field" message="This field can't be left blank"/>
+	    </param>
+       
+            <param name="convert3d" type="select" label="convert in 3D">
+        	<option value = "" selected="True" >NO</option>
+        	<option value = "-convert3d" >YES</option>
+  	    </param>
+
+            <param name="retain3d" type="select" label="Retain 3D coordinates">
+        	<option value = "" selected="True" >NO</option>
+        	<option value = "-retain3d" >YES</option>
+            </param>
+	    <param name="coordinate2d" type="select" label="calculate 2d descriptors">
+		    <option value = ""  >NO</option>
+		    <option value = "-2d" selected="True" >YES</option>
+	    </param>
+	    
+	    <param name="coordinate3d" type="select" label="calculate 3d descriptors">
+		    <option value = "" selected="True" >NO</option>
+		    <option value = "-3d" >YES</option>
+	    </param>
+
+	    <param name="fingerprint" type="select"  label="calculate fingerprints">
+        	<option value = "" selected="True" >NO</option>
+        	<option value = "-fingerprints">YES</option>
+	    </param>
+
+	    <param name="retainorder" type="select" label="Retain molecules order">
+        	<option value = "-retainorder" selected="True">YES</option>
+         	<option value = "" >NO</option>
+	    </param>
+
+            <!--
+            <param name="3d" type="checkbox" label="Include 3D descriptors" description="add 3D descriptor" value="1" default="0" />
+            <param name="fingerprint" type="checkbox" label="Include PubChem fingerprints" description="calculate 881 fingerprints" value="1" default="0" / >
+            -->
+	</inputs>
+
+    <outputs>
+	    <data format="csv" name="descriptor" label="Descriptors File of $input.name "/>
+	    <data format="txt" name="log" label="Log File of $input.name"/>
+    </outputs>
+
+    <tests>
+        <test>
+            <param name="input" value="test.sdf" />
+            <param name="detectaromaticity" value="-detectaromaticity" />
+            <param name="removesalt" value="-removesalt" />
+            <param name="standardizenitro" value="-standardizenitro" />
+            <param name="convert3d" value="" />
+            <param name="retain3d" value="-retain3d" />
+	    <param name="threads" value="8" />
+	    <param name="maxjob" value="8" />
+	    <param name="maxruntime" value="300000" />
+            <param name="coordinate2d" value="-2d" />
+	    <param name="coordinate3d" value="-3d" />
+            <param name="fingerprint" value="-fingerprints" />
+            <param name="retainorder" value="-retainorder" />
+            <output name="descriptor" file="descriptorfile.csv" compare="sim_size" delta="2000" />
+            <output name="log" file="logs" compare="sim_size" delta="2000" />
+        </test>
+    </tests>
+
+    <help>Input may be any sdf,smile or mol2 file  and output file will be in CSV format.</help>
+
+</tool>

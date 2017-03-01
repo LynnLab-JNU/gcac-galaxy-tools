@@ -1,0 +1,9 @@
+---
+description: extract best feature subsets cantaining input data for model building. 
+long_description: |
+              This is a long description..     
+name: feature_selection
+owner: planemo 
+type: unrestricted 
+homepage_url: 
+remote_repository_url: 

@@ -1,0 +1,555 @@
+<?xml version="1.0"?>
+<tool_dependency>
+   <package name="R" version="3.2.1">
+	<repository changeset_revision="83a761cd6a6c" name="package_r_3_2_1" owner="iuc" prior_installation_required="True" toolshed="http://testgalaxy.osdd.jnu.ac.in:9009" />
+   </package>
+
+<package name="carettools" version="1.0">
+     	<install version="1.0">
+        <actions>
+           <action type="set_environment_for_install">
+		   <repository changeset_revision="83a761cd6a6c" name="package_r_3_2_1" owner="iuc" prior_installation_required="True" toolshed="http://testgalaxy.osdd.jnu.ac.in:9009" >
+                        <package name="R" version="3.2.1" />
+                   </repository>
+           </action>
+               
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/Rcpp_0.12.1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL Rcpp_0.12.1.tar.gz?raw=true</action>
+<action type="shell_command">cp $R_ROOT_DIR/lib/libblas.so.3gf $R_ROOT_DIR/lib/libblas.so.3</action>
+<action type="shell_command">cp $R_ROOT_DIR/lib/libblas.so.3 $R_ROOT_DIR/lib/R/lib</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/Matrix_1.2-2.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL Matrix_1.2-2.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/RcppEigen_0.3.2.5.0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL RcppEigen_0.3.2.5.0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/minqa_1.2.4.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL minqa_1.2.4.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/nloptr_1.0.4.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL nloptr_1.0.4.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/lme4_1.1-9.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL lme4_1.1-9.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/e1071_1.6-7.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL e1071_1.6-7.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/TeachingDemos_2.9.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL TeachingDemos_2.9.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/plotrix_3.5-12.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL plotrix_3.5-12.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/plotmo_3.1.4.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL plotmo_3.1.4.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/earth_4.4.2.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL earth_4.4.2.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/fastICA_1.2-0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL fastICA_1.2-0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/iterators_1.0.7.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL iterators_1.0.7.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/foreach_1.4.2.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL foreach_1.4.2.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/gam_1.12.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL gam_1.12.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/numDeriv_2014.2-1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL numDeriv_2014.2-1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/lava_1.4.1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL lava_1.4.1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/prodlim_1.5.1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL prodlim_1.5.1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/rpart_4.1-10.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL rpart_4.1-10.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/ipred_0.9-5.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL ipred_0.9-5.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/kernlab_0.9-22.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL kernlab_0.9-22.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/combinat_0.0-8.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL combinat_0.0-8.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/klaR_0.6-12.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL klaR_0.6-12.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/ellipse_0.3-8.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL ellipse_0.3-8.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/mda_0.4-7.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL mda_0.4-7.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/mlbench_2.1-1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL mlbench_2.1-1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/lattice_0.20-33.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL lattice_0.20-33.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/zoo_1.7-12.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL zoo_1.7-12.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/sandwich_2.3-3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL sandwich_2.3-3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/strucchange_1.5-1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL strucchange_1.5-1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/modeltools_0.2-21.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL modeltools_0.2-21.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/mvtnorm_1.0-3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL mvtnorm_1.0-3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/coin_1.0-24.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL coin_1.0-24.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/party_1.0-18.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL party_1.0-18.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/partykit_1.0-3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL partykit_1.0-3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/pls_2.4-3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL pls_2.4-3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/plyr_1.8.3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL plyr_1.8.3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/pROC_1.8.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL pROC_1.8.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/proxy_0.4-15.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL proxy_0.4-15.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/randomForest_4.6-10.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL randomForest_4.6-10.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/RANN_2.5.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL RANN_2.5.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/spls_2.2-1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL spls_2.2-1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/subselect_0.12-5.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL subselect_0.12-5.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/pamr_1.55.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL pamr_1.55.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/superpc_1.09.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL superpc_1.09.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/stringi_0.5-5.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL stringi_0.5-5.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/magrittr_1.5.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL magrittr_1.5.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/stringr_1.0.0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL stringr_1.0.0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/reshape2_1.4.1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL reshape2_1.4.1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/Cubist_0.0.18.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL Cubist_0.0.18.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/digest_0.6.8.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL digest_0.6.8.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/memoise_0.2.1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL memoise_0.2.1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/crayon_1.3.1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL crayon_1.3.1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/testthat_0.10.0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL testthat_0.10.0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/pbkrtest_0.4-2.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL pbkrtest_0.4-2.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/SparseM_1.7.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL SparseM_1.7.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/MatrixModels_0.4-1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL MatrixModels_0.4-1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/quantreg_5.19.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL quantreg_5.19.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/car_2.0-25.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL car_2.0-25.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/ISwR_2.0-7.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL ISwR_2.0-7.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/nlme_3.1-122.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL nlme_3.1-122.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/profileModel_0.5-9.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL profileModel_0.5-9.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/brglm_0.5-9.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL brglm_0.5-9.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/gtools_3.5.0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL gtools_3.5.0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/BradleyTerry2_1.0-6.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL BradleyTerry2_1.0-6.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/gtable_0.1.2.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL gtable_0.1.2.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/RColorBrewer_1.1-2.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL RColorBrewer_1.1-2.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/dichromat_2.0-0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL dichromat_2.0-0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/colorspace_1.2-6.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL colorspace_1.2-6.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/munsell_0.4.2.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL munsell_0.4.2.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/labeling_0.3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL labeling_0.3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/scales_0.3.0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL scales_0.3.0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/BiocGenerics_0.8.0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL BiocGenerics_0.8.0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/graph_1.40.1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL graph_1.40.1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/Rgraphviz_2.6.0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL Rgraphviz_2.6.0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/proto_0.3-10.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL proto_0.3-10.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/ggplot2_1.0.1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL ggplot2_1.0.1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/caret_6.0-52.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL caret_6.0-52.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/abind_1.4-3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL abind_1.4-3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/acepack_1.3-3.3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL acepack_1.3-3.3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/ada_2.0-3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL ada_2.0-3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/adabag_4.0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL adabag_4.0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/lmtest_0.9-34.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL lmtest_0.9-34.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/Formula_1.2-1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL Formula_1.2-1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/AER_1.2-4.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL AER_1.2-4.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/zlibbioc_1.8.0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL zlibbioc_1.8.0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/affyio_1.30.0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL affyio_1.30.0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/preprocessCore_1.24.0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL preprocessCore_1.24.0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/Biobase_2.22.0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL Biobase_2.22.0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/BiocInstaller_1.12.1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL BiocInstaller_1.12.1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/affy_1.40.0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL affy_1.40.0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/gamlss.data_4.3-0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL gamlss.data_4.3-0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/gamlss.dist_4.3-5.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL gamlss.dist_4.3-5.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/gamlss_4.3-6.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL gamlss_4.3-6.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/AGD_0.35.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL AGD_0.35.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/akima_0.5-11.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL akima_0.5-11.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/animation_2.3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL animation_2.3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/DBI_0.3.1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL DBI_0.3.1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/RSQLite_1.0.0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL RSQLite_1.0.0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/IRanges_1.20.7.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL IRanges_1.20.7.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/AnnotationDbi_1.24.0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL AnnotationDbi_1.24.0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/ape_3.3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL ape_3.3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/bdsmatrix_1.3-2.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL bdsmatrix_1.3-2.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/biglm_0.9-1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL biglm_0.9-1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/bitops_1.0-6.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL bitops_1.0-6.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/rFerns_1.1.0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL rFerns_1.1.0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/Boruta_4.0.0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL Boruta_4.0.0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/gbm_2.1.1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL gbm_2.1.1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/bst_0.3-4.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL bst_0.3-4.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/C50_0.1.0-24.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL C50_0.1.0-24.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/ca_0.58.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL ca_0.58.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/heplots_1.0-16.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL heplots_1.0-16.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/candisc_0.6-7.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL candisc_0.6-7.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/catdata_1.2.1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL catdata_1.2.1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/cba_0.2-15.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL cba_0.2-15.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/chron_2.3-47.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL chron_2.3-47.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/clue_0.3-50.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL clue_0.3-50.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/coda_0.17-1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL coda_0.17-1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/CompQuadForm_1.4.1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL CompQuadForm_1.4.1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/corpcor_1.6.8.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL corpcor_1.6.8.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/corrplot_0.73.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL corrplot_0.73.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/coxme_2.2-5.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL coxme_2.2-5.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/date_1.2-34.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL date_1.2-34.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/deldir_0.1-9.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL deldir_0.1-9.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/manipulate_1.0.1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL manipulate_1.0.1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/BH_1.58.0-1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL BH_1.58.0-1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/DescTools_0.99.13.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL DescTools_0.99.13.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/diptest_0.75-7.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL diptest_0.75-7.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/doMC_1.3.3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL doMC_1.3.3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/snow_0.3-13.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL snow_0.3-13.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/doSNOW_1.0.12.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL doSNOW_1.0.12.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/som_0.3-5.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL som_0.3-5.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/sp_1.2-0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL sp_1.2-0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/spam_1.0-1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL spam_1.0-1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/tensor_1.5.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL tensor_1.5.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/polyclip_1.3-2.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL polyclip_1.3-2.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/goftest_1.0-3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL goftest_1.0-3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/spatstat_1.40-0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL spatstat_1.40-0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/stabs_0.5-1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL stabs_0.5-1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/dynlm_0.3-3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL dynlm_0.3-3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/effects_3.0-4.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL effects_3.0-4.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/expm_0.99-1.1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL expm_0.99-1.1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/Fahrmeir_2015.6.25.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL Fahrmeir_2015.6.25.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/fit.models_0.5-10.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL fit.models_0.5-10.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/forward_1.0.3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL forward_1.0.3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/GAMBoost_1.2-3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL GAMBoost_1.2-3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/gclus_1.3.1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL gclus_1.3.1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/gee_4.13-19.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL gee_4.13-19.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/geepack_1.2-0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL geepack_1.2-0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/glmmML_1.0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL glmmML_1.0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/glmnet_2.0-2.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL glmnet_2.0-2.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/qvcalc_0.8-9.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL qvcalc_0.8-9.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/relimp_1.0-4.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL relimp_1.0-4.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/gnm_1.0-8.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL gnm_1.0-8.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/GPArotation_2014.11-1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL GPArotation_2014.11-1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/gpclib_1.5-5.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL gpclib_1.5-5.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/gridBase_0.4-7.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL gridBase_0.4-7.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/hexbin_1.27.0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL hexbin_1.27.0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/highlight_0.4.7.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL highlight_0.4.7.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/latticeExtra_0.6-26.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL latticeExtra_0.6-26.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/gridExtra_2.0.0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL gridExtra_2.0.0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/Hmisc_3.16-0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL Hmisc_3.16-0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/HSAUR_1.3-7.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL HSAUR_1.3-7.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/registry_0.3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL registry_0.3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/xtable_1.7-4.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL xtable_1.7-4.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/pkgmaker_0.22.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL pkgmaker_0.22.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/rngtools_1.2.4.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL rngtools_1.2.4.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/doParallel_1.0.8.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL doParallel_1.0.8.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/NMF_0.20.6.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL NMF_0.20.6.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/irlba_1.0.3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL irlba_1.0.3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/igraph_1.0.1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL igraph_1.0.1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/igraphdata_1.0.1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL igraphdata_1.0.1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/ineq_0.2-13.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL ineq_0.2-13.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/inline_0.3.14.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL inline_0.3.14.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/isa2_0.3.4.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL isa2_0.3.4.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/quadprog_1.5-5.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL quadprog_1.5-5.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/kinship2_1.6.4.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL kinship2_1.6.4.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/lars_1.2.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL lars_1.2.tar.gz?raw=true</action>
+<!--action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/leaps_2.9.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL leaps_2.9.tar.gz?raw=true</action-->
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/limma_3.18.13.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL limma_3.18.13.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/locfit_1.5-9.1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL locfit_1.5-9.1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/logspline_2.1.8.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL logspline_2.1.8.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/lpSolve_5.6.12.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL lpSolve_5.6.12.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/lqa_1.0-3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL lqa_1.0-3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/maps_2.3-11.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL maps_2.3-11.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/mapproj_1.2-4.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL mapproj_1.2-4.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/maptools_0.8-36.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL maptools_0.8-36.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/marray_1.40.0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL marray_1.40.0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/Matching_4.8-3.4.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL Matching_4.8-3.4.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/MatchIt_2.4-21.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL MatchIt_2.4-21.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/miscTools_0.6-16.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL miscTools_0.6-16.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/maxLik_1.2-4.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL maxLik_1.2-4.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/MBESS_3.3.3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL MBESS_3.3.3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/mclust_5.0.2.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL mclust_5.0.2.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/MCMCpack_1.3-3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL MCMCpack_1.3-3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/mice_2.22.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL mice_2.22.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/microbenchmark_1.4-2.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL microbenchmark_1.4-2.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/misc3d_0.8-4.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL misc3d_0.8-4.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/mitools_2.3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL mitools_2.3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/mix_1.0-9.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL mix_1.0-9.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/mnormt_1.5-3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL mnormt_1.5-3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/mondate_0.10.01.02.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL mondate_0.10.01.02.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/MPV_1.38.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL MPV_1.38.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/TH.data_1.0-6.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL TH.data_1.0-6.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/multcomp_1.4-1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL multcomp_1.4-1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/multicool_0.1-7.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL multicool_0.1-7.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/multtest_2.18.0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL multtest_2.18.0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/MuMIn_1.15.1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL MuMIn_1.15.1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/mvnormtest_0.1-9.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL mvnormtest_0.1-9.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/nor1mix_1.2-1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL nor1mix_1.2-1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/nws_1.7.0.1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL nws_1.7.0.1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/oz_1.0-20.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL oz_1.0-20.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/pan_1.3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL pan_1.3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/PBSmapping_2.69.76.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL PBSmapping_2.69.76.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/pcaPP_1.9-60.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL pcaPP_1.9-60.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/penalized_0.9-45.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL penalized_0.9-45.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/pkgKitten_0.1.3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL pkgKitten_0.1.3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/PKPDmodels_0.3.2.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL PKPDmodels_0.3.2.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/plm_1.4-0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL plm_1.4-0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/png_0.1-7.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL png_0.1-7.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/scatterplot3d_0.3-36.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL scatterplot3d_0.3-36.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/poLCA_1.4.1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL poLCA_1.4.1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/polspline_1.1.12.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL polspline_1.1.12.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/sfsmisc_1.0-28.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL sfsmisc_1.0-28.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/polycor_0.7-8.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL polycor_0.7-8.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/polynom_1.3-8.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL polynom_1.3-8.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/prefmod_0.8-32.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL prefmod_0.8-32.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/pscl_1.4.9.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL pscl_1.4.9.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/rbenchmark_1.0.0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL rbenchmark_1.0.0.tar.gz?raw=true</action>
+<!--action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/Rcompression_0.93-2.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL Rcompression_0.93-2.tar.gz?raw=true</action-->
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/rgenoud_5.7-12.4.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL rgenoud_5.7-12.4.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/rhdf5_2.6.0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL rhdf5_2.6.0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/rlecuyer_0.3-3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL rlecuyer_0.3-3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/rmeta_2.16.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL rmeta_2.16.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/survival_2.38-3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL survival_2.38-3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/rms_4.3-1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL rms_4.3-1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/RSVGTipsDevice_1.0-4.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL RSVGTipsDevice_1.0-4.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/lpsymphony_0.99.6.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL lpsymphony_0.99.6.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/RUnit_0.4.29.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL RUnit_0.4.29.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/systemfit_1.1-18.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL systemfit_1.1-18.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/sampleSelection_1.0-2.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL sampleSelection_1.0-2.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/shapefiles_0.7.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL shapefiles_0.7.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/slam_0.1-32.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL slam_0.1-32.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/Sleuth2_1.0-7.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL Sleuth2_1.0-7.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/SuppDists_1.1-9.1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL SuppDists_1.1-9.1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/survey_3.30-3.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL survey_3.30-3.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/tables_0.7.79.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL tables_0.7.79.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/testit_0.4.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL testit_0.4.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/timeDate_3012.100.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL timeDate_3012.100.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/tis_1.30.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL tis_1.30.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/tripack_1.3-6.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL tripack_1.3-6.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/truncreg_0.2-1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL truncreg_0.2-1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/tseries_0.10-34.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL tseries_0.10-34.tar.gz?raw=true</action>
+<!--action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/TSA_1.01.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL TSA_1.01.tar.gz?raw=true</action-->
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/urca_1.2-8.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL urca_1.2-8.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/vcd_1.4-1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL vcd_1.4-1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/VGAM_0.9-8.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL VGAM_0.9-8.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/VGAMdata_0.9-7.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL VGAMdata_0.9-7.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/Zelig_4.2-1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL Zelig_4.2-1.tar.gz?raw=true</action>
+<!--action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/Rmpi_0.6-5.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL Rmpi_0.6-5.tar.gz?raw=true</action-->
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/uplod/caTools_1.17.1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL caTools_1.17.1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/uplod/pbapply_1.1-1.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL pbapply_1.1-1.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/uplod/caretEnsemble_1.0.0.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL caretEnsemble_1.0.0.tar.gz?raw=true</action>
+<action type="download_file">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/RRF_1.6.tar.gz?raw=true</action>
+<action type="shell_command">R CMD INSTALL RRF_1.6.tar.gz?raw=true</action>                   
+                 
+       </actions>
+           
+        </install>
+        <readme>
+caret tools installed successfully.
+        </readme>
+    </package>
+    
+</tool_dependency>

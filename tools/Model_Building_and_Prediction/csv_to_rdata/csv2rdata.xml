@@ -1,0 +1,51 @@
+<tool id="csv2rdata" name="Prepare input file" version="1.0">
+    <description>
+        This Tool Converts Input csv File into RData Which Is Further Used for Model Building
+    </description>
+
+    <requirements>
+        <requirement type="package" version="3.2.0">R</requirement>
+    </requirements>
+
+    <stdio>
+        <exit_code range="1:" />
+    </stdio>
+
+    <command interpreter="Rscript">csv2rdata.R $file1 $RData </command>
+
+    <inputs>
+	    <param name="file1" type="data" format="csv"  label="Select file containing training data" help="CSV format" />
+    </inputs>
+
+    <outputs>
+	    <data name="RData" format="data" label="Input.RData" />
+    </outputs>
+
+    <tests>
+	<test>
+           <param  name="file1" value="non_redundant.csv" />
+           <output name="RData" file="desc.RData" compare="sim_size" delta="50000" />
+        </test>
+    </tests>
+
+    <help>
+.. class:: infomark
+
+**Input "csv file" format must be as given below :**
+
+
+"",feature1,feaure2,feature3,..,activity
+
+
+cpd1,623,0.4,3.4,..,Active
+                      
+cpd2,234,0.9,5.6,..,Inactive 
+
+cpd3,567,0.5,3.14,..,Active
+
+cpd4,231,0.1,1.2,..,Inactive 
+
+here "cpd" stands for name or id of a compound. It is rowname with no column header.     
+    </help>
+
+</tool>

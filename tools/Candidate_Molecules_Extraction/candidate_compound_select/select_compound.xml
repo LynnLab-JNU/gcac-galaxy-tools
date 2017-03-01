@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<tool id="select_compound" name="Select Compounds based of score" version="1.0">
+<description>This tool selects compounds from prediction result based on given score</description>
+
+<stdio>
+	<exit_code range="1:" />
+</stdio>
+
+<command interpreter="Rscript">select_compound.R $predictionfile $LT $GT $type $SelectedCompound </command>
+
+<inputs>
+	<param name="predictionfile" type="data" format="txt,tabular,csv" label="Predition Result File" help ="upload gcac prediction result file " /> 
+	<param name="type" type="select" label="Active/Positive or Inactive/Negative" help ="select type of molecule">
+		<option value="Active" selected="True">Active/Positive</option> 
+		<option value="Inactive">Inactive/Negative</option>
+	</param> 
+	<param name="GT" type="float" value="0.5" label="Score greater than and equal to" help ="define value above which compound selected default is 0.5" /> 
+	<param name="LT" type="float" value="1.0" label="Score less than and equal to" help ="define value below which compound selected default is 1" /> 
+</inputs>
+
+<outputs>
+	<data name="SelectedCompound" format="txt" label="Refind-${predictionfile.name}" />
+</outputs>
+<tests>
+	<test>
+		<param name="predictionfile" value="prediction_set_result.txt"  />
+		<param name="type" value="Active"  />
+		<param name="GT" value="0.5"  />
+		<param name="LT" value="1.0"  />
+		<output name="SelectedCompound" file="selected_prediction_set_result.txt" compare="sim_size" delta="4000" />
+      	</test>
+</tests>
+<help></help>
+</tool>
