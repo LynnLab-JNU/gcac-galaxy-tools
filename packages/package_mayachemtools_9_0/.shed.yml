@@ -2,8 +2,8 @@ categories:
         - Tool Dependency Packages
 description: Contains a tool dependency definition that downloads and install mayachemtools.
 long_description: |
-        The long description here ...
+        The long description goes here ... 
 name: package_mayachemtools_9_0 
-owner: planemo
+owner: anmoljh
 remote_repository_url: 
 type: tool_dependency_definition

@@ -3,7 +3,9 @@
      <package name="mayachemtools" version="9.0">
         <install version="1.0">
            <actions>
-                   <action type="download_by_url">https://github.com/Deep2106/R-3.1.3caret/blob/CARET/mayachemtools.tar.gz?raw=true</action>
+		   <action type="download_by_url" sha256sum="f91ac4b1ca9f71c7e49afed7587d7b7b5face52e4a39a76265c6fcc8dcec5210">
+			   https://github.com/Deep2106/R-3.1.3caret/blob/CARET/mayachemtools.tar.gz?raw=true
+		   </action>
                    <action type="move_directory_files">
                            <source_directory>.</source_directory>
                            <destination_directory>$INSTALL_DIR</destination_directory>
