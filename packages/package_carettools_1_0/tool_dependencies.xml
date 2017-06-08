@@ -31,10 +31,10 @@
 		https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/minqa_1.2.4.tar.gz?raw=true
 	</action>
 	<action type="shell_command">R CMD INSTALL minqa_1.2.4.tar.gz?raw=true</action>
-	<action type="download_file" sha256sum="8f9d70e1e1aeab1a1a54b236ea8c8157f0c6444249126f706b54b62499034695">
+	<!--action type="download_file" sha256sum="8f9d70e1e1aeab1a1a54b236ea8c8157f0c6444249126f706b54b62499034695">
 		https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/nloptr_1.0.4.tar.gz?raw=true
 	</action>
-	<action type="shell_command">R CMD INSTALL nloptr_1.0.4.tar.gz?raw=true</action>
+	<action type="shell_command">R CMD INSTALL nloptr_1.0.4.tar.gz?raw=true</action-->
 	<action type="download_file" sha256sum="02e294859b5eb70d665ac2c3b66120e93d22236580450a81e2ec2d4467b89b89">
 		https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/lme4_1.1-9.tar.gz?raw=true
 	</action>
@@ -679,7 +679,7 @@
 		https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/pkgmaker_0.22.tar.gz?raw=true
 	</action>
 	<action type="shell_command">R CMD INSTALL pkgmaker_0.22.tar.gz?raw=true</action>
-	<action type="download_file" sha256sum="rngtools_1.2.4.tar.gz?raw=true">
+	<action type="download_file" sha256sum="27019835b750f470b13dbb7fecd3b839a61b52774e23fffa191f919533768fb9">
 		https://github.com/Deep2106/R-3.1.3caret/blob/CARET/DataMiningWORK/GIT_GCAC_CODES/GIT/UPLOAD2/rngtools_1.2.4.tar.gz?raw=true
 	</action>
 	<action type="shell_command">R CMD INSTALL rngtools_1.2.4.tar.gz?raw=true</action>
