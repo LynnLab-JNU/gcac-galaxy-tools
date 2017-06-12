@@ -3,7 +3,7 @@ description:  Predicts activity of molecules using their descriptor file (predic
 long_description: |
               This is a long description..     
 name: activity_predict
-owner: planemo 
+owner: anmoljh
 type: unrestricted 
 homepage_url: 
 remote_repository_url:  

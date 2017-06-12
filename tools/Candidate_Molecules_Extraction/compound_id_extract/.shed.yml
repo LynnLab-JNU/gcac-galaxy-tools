@@ -3,7 +3,7 @@ description: extracts compound IDs to be used in downstream compound extraction 
 long_description: |
               This is a long description..     
 name: compound_id_extract 
-owner: planemo 
+owner: anmoljh
 type: unrestricted 
 homepage_url: 
 remote_repository_url: 

@@ -3,7 +3,7 @@ description:  removes redundant entries of molecules.
 long_description: |
               This is a long description..     
 name: redundant_entries_remove
-owner: planemo 
+owner: anmoljh
 type: unrestricted 
 homepage_url: 
 remote_repository_url:  

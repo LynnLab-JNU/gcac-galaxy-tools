@@ -3,7 +3,7 @@ description:  calculates descriptors for active and inactive datasets.
 long_description: |
               This is a long description..     
 name: padel_descriptor_calculation
-owner: planemo 
+owner: anmoljh
 type: unrestricted 
 homepage_url: 
 remote_repository_url:  
