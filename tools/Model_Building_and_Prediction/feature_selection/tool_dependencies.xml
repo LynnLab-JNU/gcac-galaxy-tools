@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <tool_dependency>
     <package name="R" version="3.2.1">
-	    <repository changeset_revision="83a761cd6a6c" name="package_r_3_2_1" owner="iuc" prior_installation_required="True" toolshed="http://testgalaxy.osdd.jnu.ac.in:9009" />
+	    <repository changeset_revision="77d439695328" name="package_r_3_2_1" owner="iuc" prior_installation_required="True" toolshed="https://testtoolshed.g2.bx.psu.edu/" />
     </package>
     <package name="carettools" version="1.0">
-	    <repository changeset_revision="fd73df868156" name="package_carettools_1_0" owner="planemo" prior_installation_required="True" toolshed="http://testgalaxy.osdd.jnu.ac.in:9009" />
+	    <repository changeset_revision="5517d8d4223b" name="package_carettools_1_0" owner="anmoljh" prior_installation_required="True" toolshed="https://testtoolshed.g2.bx.psu.edu/" />
     </package>
 </tool_dependency>
