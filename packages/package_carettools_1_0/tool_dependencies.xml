@@ -1070,7 +1070,15 @@
 		https://github.com/Deep2106/R-3.1.3caret/blob/CARET/RRF_1.6.tar.gz?raw=true
 	</action>
 	<action type="shell_command">R CMD INSTALL RRF_1.6.tar.gz?raw=true</action>                   
-                 
+	<action type="download_file" sha256sum="0e5d77abae12bc50639d34354f96a8e079408c9d7138a360743b73bd7bce6c1f">
+		https://github.com/Deep2106/R-3.1.3caret/blob/CARET/nnls_1.4.tar.gz?raw=true
+	</action>
+	<action type="shell_command">R CMD INSTALL nnls_1.4.tar.gz?raw=true</action>
+	<action type="download_file" sha256sum="d6a3ba333c21af859cf6176da660b74daf74f225d0fd7911bd49ba7fde3661e7">
+		https://github.com/Deep2106/R-3.1.3caret/blob/CARET/mboost_2.4-0.tar.gz?raw=true
+	</action>
+	<action type="shell_command">R CMD INSTALL mboost_2.4-0.tar.gz?raw=true</action>
+
       </actions>
      </install>
 
