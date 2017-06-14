@@ -53,18 +53,18 @@
 	    <param format="sdf" name="input" type="data" label="sdf/smile/mol2 file" optional= "false"/>
   		
 	    <param name="detectaromaticity" type="select" label="Detect the aroamaticity">
-        	<option value = "-detectaromaticity" selected="True" >YES</option>
-		    <option value = "" >NO</option>
+        	<option value="-detectaromaticity" selected="True">YES</option>
+		<option value="" >NO</option>
 	    </param>
 
 	    <param name="removesalt" type="select" label="Remove salt">
-        	<option value = "-removesalt" selected="True" >YES</option>
-		    <option value = "" >NO</option>
+        	<option value="-removesalt" selected="True">YES</option>
+		<option value="">NO</option>
 	    </param>
        
             <param name="standardizenitro" type="select" label="Standardize nitro groups">
-        	<option value = "-standardizenitro" selected="True" >YES</option>
-          	<option value = "" >NO</option>
+        	<option value="-standardizenitro" selected="True" >YES</option>
+          	<option value="">NO</option>
 	    </param>
        
             <param name="maxruntime" type="integer" value="300000" label="Set run time for individual molecule" help="In miliseconds" >
@@ -80,32 +80,32 @@
 	    </param>
        
             <param name="convert3d" type="select" label="convert in 3D">
-        	<option value = "" selected="True" >NO</option>
-        	<option value = "-convert3d" >YES</option>
+        	<option value="" selected="True">NO</option>
+        	<option value="-convert3d">YES</option>
   	    </param>
 
             <param name="retain3d" type="select" label="Retain 3D coordinates">
-        	<option value = "" selected="True" >NO</option>
-        	<option value = "-retain3d" >YES</option>
+        	<option value="" selected="True">NO</option>
+        	<option value="-retain3d">YES</option>
             </param>
 	    <param name="coordinate2d" type="select" label="calculate 2d descriptors">
-		    <option value = ""  >NO</option>
-		    <option value = "-2d" selected="True" >YES</option>
+		<option value="">NO</option>
+		<option value="-2d" selected="True">YES</option>
 	    </param>
 	    
 	    <param name="coordinate3d" type="select" label="calculate 3d descriptors">
-		    <option value = "" selected="True" >NO</option>
-		    <option value = "-3d" >YES</option>
+		<option value="" selected="True">NO</option>
+		<option value="-3d">YES</option>
 	    </param>
 
 	    <param name="fingerprint" type="select"  label="calculate fingerprints">
-        	<option value = "" selected="True" >NO</option>
-        	<option value = "-fingerprints">YES</option>
+        	<option value="" selected="True">NO</option>
+        	<option value="-fingerprints">YES</option>
 	    </param>
 
 	    <param name="retainorder" type="select" label="Retain molecules order">
-        	<option value = "-retainorder" selected="True">YES</option>
-         	<option value = "" >NO</option>
+        	<option value="-retainorder" selected="True">YES</option>
+         	<option value="">NO</option>
 	    </param>
 
             <!--
