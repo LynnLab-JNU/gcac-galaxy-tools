@@ -1255,8 +1255,8 @@ toLatex(sessionInfo())
 ## change this to the name of modName....
 Fit <- modelFit
 if(exists('ppInfo') && !is.null(ppInfo)){
-save(Fit,ppInfo,file="$METHOD-Fit.RData")
-} else {save(Fit,file="$METHOD-Fit.RData")}
+save(Fit,ppInfo,cm,file="$METHOD-Fit.RData")
+} else {save(Fit,cm,file="$METHOD-Fit.RData")}
 
 @
 The model was built using $METHOD and is saved as $METHOD Model for reuse. This contains the variable Fit.
