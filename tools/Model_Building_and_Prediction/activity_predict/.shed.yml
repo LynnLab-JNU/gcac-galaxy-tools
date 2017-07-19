@@ -1,0 +1,9 @@
+---
+description:  Predicts activity of molecules using their descriptor file (prediction set) and supplied model.
+long_description: |
+              This is a long description..     
+name: activity_predict
+owner: anmoljh
+type: unrestricted 
+homepage_url: 
+remote_repository_url:  

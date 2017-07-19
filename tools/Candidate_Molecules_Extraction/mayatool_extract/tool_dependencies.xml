@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="mayachemtools" version="9.0">
+	    <repository changeset_revision="1de39c5b2d00" name="package_mayachemtools_9_0" owner="anmoljh" prior_installation_required="True" toolshed="https://testtoolshed.g2.bx.psu.edu/" />
+    </package>    
+</tool_dependency>

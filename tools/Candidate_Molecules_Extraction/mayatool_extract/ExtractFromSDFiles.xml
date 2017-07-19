@@ -1,0 +1,43 @@
+<tool id="ExtractFromSDFiles" name="ExtractFromSDFiles" version="1.0">
+<description>extract data from file according to field name and Ids </description>
+<requirements>
+     <requirement type="package" version="9.0">mayachemtools</requirement>
+</requirements>
+<stdio>
+     <exit_code range="1:" />
+</stdio>
+
+<command> <![CDATA[ 
+
+#if '.sdf' in $inputsdf.name
+
+/bin/mkdir -p $inputsdf.extra_files_path;
+ln -sf $inputsdf $inputsdf.extra_files_path/molecules.sdf;
+
+ExtractFromSDFiles.pl -o -m datafieldbylist -d  $Identifier,`cat ${indexnumbers}`  -r $outputsdf.name $inputsdf.extra_files_path/molecules.sdf > $logs;
+
+/bin/rm -rf $inputsdf.extra_files_path;
+cp $outputsdf.name $outputsdf;
+
+#end if
+
+]]> </command>
+    <inputs>
+        <param name="inputsdf" type="data" format="sdf" label="Original SDF File " help="sdf file from which selected ids of molecules  need to be extracted." />
+        <param name="Identifier" type="text" label="Field name" help="Give field name of molecules on which compound need to be extracted Ex. MolID,PUBCHEM_COMPOUND_ID,CID etc." />
+        <param name="indexnumbers" type="data" format="txt" label="Id file which need to be extracted from dataset" help="select file of ids ie. result file obtained from the tool 'Extract IDs From Prediction Result'" />
+    </inputs>
+    <outputs>
+        <data name="outputsdf" format="sdf" label="extracted_cpds_from_${inputsdf.name}" />
+        <data name="logs" format="txt" label="logfile" />
+    </outputs>
+    <tests>
+        <test>
+              <param name="inputsdf" value="Pred_set.sdf"  />
+	      <param name="Identifier" value="MOLECULE_NAME" />
+	      <param name="indexnumbers" value="extracted_ids.txt"  />
+	      <output name="outputsdf" file="extracted_cpds.sdf" compare="sim_size" delta="8000000" />
+	      <output name="logs" file="ext_log.txt" compare="sim_size" delta="800000" />
+        </test>
+    </tests>
+</tool>

@@ -1,0 +1,511 @@
+<tool id="rcaret_classification_model" name="Create script from the template file" version="1.0">
+	<description>used to create script file from user given input to build a model</description>
+	<requirements>
+    		<requirement type="package" version="3.2.1">R</requirement>
+    		<requirement type="package" version="1.0">carettools</requirement>
+	</requirements>
+        <stdio>
+	        <exit_code range="1:" />
+	</stdio>
+
+<command interpreter="python">
+#if $OPTION11.PARAMETERS == "Advance"
+modelBuilding.py --method $METHOD $RDATA --getdatainfoeval $OPTION11.GETDATAINFOEVAL --getdatainfoecho $OPTION11.GETDATAINFOECHO --getdatainforesult $OPTION11.GETDATAINFORESULT --missingfiltereval $OPTION11.CON1.MISSINGFILTEREVAL --missingfilterecho $OPTION11.CON1.MISSINGFILTERECHO --missingfilterresult $OPTION11.CON1.MISSINGFILTERRESULT --missingfilterthreshc $OPTION11.CON1.MISSINGFILTERTHRESHC --missingfilterthreshr $OPTION11.CON1.MISSINGFILTERTHRESHR --pcaeval $OPTION11.PCAEVAL --pcaecho $OPTION11.PCAECHO --pcaresult $OPTION11.PCARESULT --pcacomp $OPTION11.PCACOMP --pcaploteval $OPTION11.PCAPLOTEVAL --pcaplotecho $OPTION11.PCAPLOTECHO --pcaplotresult $OPTION11.PCAPLOTRESULT --pcaplotfig $OPTION11.PCAPLOTFIG --initialdataspliteval $OPTION11.CON2.INITIALDATASPLITEVAL --initialdatasplitecho $OPTION11.CON2.INITIALDATASPLITECHO --initialdatasplitresult $OPTION11.CON2.INITIALDATASPLITRESULT --saampling $OPTION11.CON2.SAAMPLING --percent $OPTION11.CON2.PERCENT --nzveval $OPTION11.CON3.NZVEVAL --nzvresult $OPTION11.CON3.NZVRESULT --nzvecho $OPTION11.CON3.NZVECHO --corrfiltereval $OPTION11.CON4.CORRFILTEREVAL --corrfilterresult $OPTION11.CON4.CORRFILTERRESULT --corrfilterecho $OPTION11.CON4.CORRFILTERECHO --threshholdcor $OPTION11.CON4.THRESHHOLDCOR --preproceval $OPTION11.CON5.PREPROCEVAL  --preprocecho $OPTION11.CON5.PREPROCECHO --preprocresult $OPTION11.CON5.PREPROCRESULT --setupworkersecho $OPTION11.SETUPWORKERSECHO --setupworkersresult $OPTION11.SETUPWORKERSRESULT --numworkers $OPTION11.NUMWORKERS --setupresamplingecho $OPTION11.CON6.SETUPRESAMPLINGECHO --setupresamplingresult $OPTION11.CON6.SETUPRESAMPLINGRESULT --resampname $OPTION11.CON6.RESAMPNAME --resamplenumber $OPTION11.CON6.RESAMPLENUMBER --numrepeat $OPTION11.CON6.NUMREPEAT --resamplenumberpercent $OPTION11.CON6.RESAMPLENUMBERPERCENT --setupgridresult $OPTION11.SETUPGRIDRESULT --setupgridecho $OPTION11.SETUPGRIDECHO --setupgridsize $OPTION11.SETUPGRIDSIZE --fitmodelresult $OPTION11.FITMODELRESULT --fitmodelecho $OPTION11.FITMODELECHO --fitmodeleval $OPTION11.FITMODELEVAL --modeldescrecho $OPTION11.MODELDESCRECHO --modeldescrresult $OPTION11.MODELDESCRRESULT --resamptableecho $OPTION11.RESAMPTABLEECHO --resamptableresult $OPTION11.RESAMPTABLERESULT --profileplotecho $OPTION11.PROFILEPLOTECHO --profileplotfig $OPTION11.PROFILEPLOTFIG --stopworkersecho $OPTION11.STOPWORKERSECHO --stopworkersresult $OPTION11.STOPWORKERSRESULT --testpredresult $OPTION11.TESTPREDRESULT --testpredecho $OPTION11.TESTPREDECHO --classprobstexresult $OPTION11.CLASSPROBSTEXRESULT --classprobstexecho $OPTION11.CLASSPROBSTEXECHO --classprobstexresult1 $OPTION11.CLASSPROBSTEXRESULT1 --classprobstexecho1 $OPTION11.CLASSPROBSTEXECHO1 --savedataecho $OPTION11.SAVEDATAECHO --savedataresult $OPTION11.SAVEDATARESULT --datasets $datasets --outputmodel $model --outputresultpdf $document;
+#end if
+#if $OPTION11.PARAMETERS == "basic"
+modelBuilding.py --method $METHOD $RDATA --getdatainfoeval $OPTION11.GETDATAINFOEVAL --getdatainfoecho $OPTION11.GETDATAINFOECHO --getdatainforesult $OPTION11.GETDATAINFORESULT --missingfiltereval $OPTION11.MISSINGFILTEREVAL --missingfilterecho $OPTION11.MISSINGFILTERECHO --missingfilterresult $OPTION11.MISSINGFILTERRESULT --missingfilterthreshc $OPTION11.MISSINGFILTERTHRESHC --missingfilterthreshr $OPTION11.MISSINGFILTERTHRESHR --pcaeval $OPTION11.PCAEVAL --pcaecho $OPTION11.PCAECHO --pcaresult $OPTION11.PCARESULT --pcacomp $OPTION11.PCACOMP --pcaploteval $OPTION11.PCAPLOTEVAL --pcaplotecho $OPTION11.PCAPLOTECHO --pcaplotresult $OPTION11.PCAPLOTRESULT --pcaplotfig $OPTION11.PCAPLOTFIG --initialdataspliteval $OPTION11.INITIALDATASPLITEVAL --initialdatasplitecho $OPTION11.INITIALDATASPLITECHO --initialdatasplitresult $OPTION11.INITIALDATASPLITRESULT --saampling $OPTION11.SAAMPLING --percent $OPTION11.PERCENT --nzveval $OPTION11.NZVEVAL --nzvresult $OPTION11.NZVRESULT --nzvecho $OPTION11.NZVECHO --corrfiltereval $OPTION11.CORRFILTEREVAL --corrfilterresult $OPTION11.CORRFILTERRESULT --corrfilterecho $OPTION11.CORRFILTERECHO --threshholdcor $OPTION11.THRESHHOLDCOR --preproceval $OPTION11.PREPROCEVAL  --preprocecho $OPTION11.PREPROCECHO --preprocresult $OPTION11.PREPROCRESULT --setupworkersecho $OPTION11.SETUPWORKERSECHO --setupworkersresult $OPTION11.SETUPWORKERSRESULT --numworkers $OPTION11.NUMWORKERS --setupresamplingecho $OPTION11.SETUPRESAMPLINGECHO --setupresamplingresult $OPTION11.SETUPRESAMPLINGRESULT --resampname $OPTION11.RESAMPNAME --resamplenumber $OPTION11.RESAMPLENUMBER --numrepeat $OPTION11.NUMREPEAT --resamplenumberpercent $OPTION11.RESAMPLENUMBERPERCENT --setupgridresult $OPTION11.SETUPGRIDRESULT --setupgridecho $OPTION11.SETUPGRIDECHO --setupgridsize $OPTION11.SETUPGRIDSIZE --fitmodelresult $OPTION11.FITMODELRESULT --fitmodelecho $OPTION11.FITMODELECHO --fitmodeleval $OPTION11.FITMODELEVAL --modeldescrecho $OPTION11.MODELDESCRECHO --modeldescrresult $OPTION11.MODELDESCRRESULT --resamptableecho $OPTION11.RESAMPTABLEECHO --resamptableresult $OPTION11.RESAMPTABLERESULT --profileplotecho $OPTION11.PROFILEPLOTECHO --profileplotfig $OPTION11.PROFILEPLOTFIG --stopworkersecho $OPTION11.STOPWORKERSECHO --stopworkersresult $OPTION11.STOPWORKERSRESULT --testpredresult $OPTION11.TESTPREDRESULT --testpredecho $OPTION11.TESTPREDECHO --classprobstexresult $OPTION11.CLASSPROBSTEXRESULT --classprobstexecho $OPTION11.CLASSPROBSTEXECHO --classprobstexresult1 $OPTION11.CLASSPROBSTEXRESULT1 --classprobstexecho1 $OPTION11.CLASSPROBSTEXECHO1 --savedataecho $OPTION11.SAVEDATAECHO --savedataresult $OPTION11.SAVEDATARESULT --datasets $datasets --outputmodel $model --outputresultpdf $document;
+#end if
+</command> 
+
+<inputs>
+	<param name="METHOD" type="select" label="SELECT METHOD FOR MODEL BUILDING" >
+		<option value="pls">Partial Least Square</option>
+		<option value="nnet">Neural Network</option>
+		<option value="bagFDA">bag-Fourier Discriminant Analysis</option>
+		<!--option value="blackboost">black-boost- Boosting Method</option-->
+		<option value="earth">Earth-MARS based method</option>
+		<option value="rf">Random Forest</option>
+		<option value="RRF">RRFglobal -Variant of Random Forest</option>
+		<option value="svmRadial">SVM-Radial</option> 
+		<option value="svmPoly">SVM-Polynomial</option>
+		<option value="ada">ada-boost</option>
+		<option value="glm">Generalised linear model </option>
+		<option value="treebag">tree based bagging method</option>
+		<option value="nb">Naive Bayes</option>
+		<option value="knn">K-nearest neighbour</option>
+		<option value="C5.0">C5.0 </option>
+	</param>
+	<param name="RDATA" type="data" format="data" label="SELECT FILE CONATINING INPUT DATA" help="RData format" />
+	
+	
+	<conditional name="OPTION11">
+		<param name="PARAMETERS" type="select">
+            		<option value="basic" selected="True" >Use optimized parameters </option>
+            		<option value="Advance"> Customized parameters </option>
+        	</param>
+       
+       		<when value="basic">
+        
+ 	 		<param name="GETDATAINFOEVAL" type="hidden" value="TRUE" help="set TRUE if wish to evaluate. default is TRUE" />	
+			<param name="GETDATAINFOECHO" type="hidden" value="FALSE"  help="set True if wish to print. default is False"/>
+        		<param name="GETDATAINFORESULT" type="hidden" value="hide" help="Set tex if wish to write in output pdf file. default is hide"/>
+			<param name="MISSINGFILTEREVAL" type="hidden" value= "TRUE" help="set TRUE if wish to evaluate. default is TRUE"/>	
+			<param name="MISSINGFILTERECHO" type="hidden" value="FALSE" help="set True if wish to print .default is False"/>
+			<param name="MISSINGFILTERRESULT" type="hidden" value="tex" help="Set tex if wish to write in output pdf file. default is tex"/>
+			<param name="MISSINGFILTERTHRESHC" type="hidden" value="0.2"  help="For column wise default is 0.2"/>
+			<param name="MISSINGFILTERTHRESHR" type="hidden" value="0.2"  help="For row wise default is 0.2"/>
+			<param name="PCAEVAL" type="hidden" value="TRUE" help="set TRUE if wish to evaluate. default is TRUE"/>	
+			<param name="PCAECHO" type="hidden" value="FALSE" help="set True if wish to print. default is False"/>
+			<param name="PCARESULT" type="hidden" value="hide" help="Set tex if wish to write in output pdf file. default is hide"/>
+			<param name="PCACOMP" type="hidden" value="3" help="set according to need. Default is 3"/>
+			<param name="PCAPLOTEVAL" type="hidden" value="TRUE" help="set TRUE if wish to plot PCA. default is TRUE"/>	
+			<param name="PCAPLOTECHO" type="hidden" value="FALSE" help="Set True if wish to Print .default is False"/>
+			<param name="PCAPLOTRESULT" type="hidden" value="tex" help="Set tex if wish to write in output pdf file. default is tex"/>
+   			<param name="PCAPLOTFIG" type="hidden" value="TRUE" help="set TRUE if wish to evaluate. default is TRUE"/>	
+			<param name="INITIALDATASPLITEVAL" type="hidden" value= "TRUE" help="set TRUE for splitting in test and train set.default is True"/>	
+			<param name="INITIALDATASPLITECHO" type="hidden" value="FALSE" help="set True if wish to print .default is False"/>
+     		   	<param name="SAAMPLING" type="hidden" value="garBage" help="default is with No sampling"/>
+			<param name="INITIALDATASPLITRESULT" type="hidden" value="tex"  help="Set tex if wish to write in output pdf file. default is tex"/>
+  			<param name="PERCENT" type="hidden" value="0.8" help="default is 0.8"/>
+   			<param name="NZVEVAL" type="hidden" value="TRUE" help="set TRUE if wish to evaluate. default is TRUE"/>	
+			<param name="NZVRESULT" type="hidden" value="tex" help="Set tex if wish to write in output pdf file. default is tex"/>
+			<param name="NZVECHO" type="hidden" value="FALSE" label="Write Code in Document" help="set True if wish to print .default is False"/>
+			<param name="CORRFILTEREVAL" type="hidden" value="TRUE" help="set TRUE if wish to evaluate. default is TRUE"/>	
+			<param name="CORRFILTERRESULT" type="hidden" value="tex"  help="Set tex if wish to write in output pdf file. default is tex"/>
+			<param name="CORRFILTERECHO" type="hidden" value="FALSE" help="set True if wish to print .default is False"/>
+			<param name="THRESHHOLDCOR" type="hidden" value="0.75" help="set according to need .default is 0.75"/>
+			<param name="PREPROCEVAL" type="hidden" value="TRUE" help="set TRUE if wish to evaluate. default is TRUE"/>	
+			<param name="PREPROCECHO" type="hidden" value="FALSE" help="set True if wish to print .default is False"/>
+			<param name="PREPROCRESULT" type="hidden" value="tex" help="Set tex if wish to write in output pdf file. default is tex"/>
+			<param name="SETUPWORKERSEVAL" type="hidden" value="FALSE" help="set TRUE if wish to evaluate. default is False"/>	
+			<param name="SETUPWORKERSECHO" type="hidden" value="FALSE" label="Write Code in Document" help="set True if wish to print .default is False"/>
+			<param name="SETUPWORKERSRESULT" type="hidden" value="tex" help="Set tex if wish to write in output pdf file. default is tex"/>
+			<param name="NUMWORKERS" type="hidden" value="1" help ="default is 1"/>
+   			<param name="SETUPRESAMPLINGECHO" type="hidden" value="FALSE" help="set True if wish to print .default is False"/>
+			<param name="SETUPRESAMPLINGRESULT" type="hidden" value="hide" help="Set tex if wish to write in output pdf file. default is hide"/>
+        		<param name="RESAMPNAME" type="hidden" value="boot632" label="Set type of resampling for cross validation" help="default is boot632"/>
+			<param name="RESAMPLENUMBER" type="hidden" value="10" label="Set Number of Times to Resample" help="default is 10"/>
+        		<param name="NUMREPEAT" type="hidden" value="3" label="Set Number of Times to run" help="default is 3"/>
+			<param name="RESAMPLENUMBERPERCENT" type="hidden" value="0.75" help="default is 0.75"/>
+			<param name="SETUPGRIDRESULT" type="hidden" value="hide" help="Set tex if wish to write in output pdf file. default is hide"/>
+  			<param name="SETUPGRIDECHO" type="hidden" value="FALSE" help="set True if wish to print .default is False"/>
+			<param name="SETUPGRIDSIZE" type="hidden" value="3" help="default is 3 "/>
+			<param name="FITMODELEVAL" type="hidden" value="TRUE" help="set TRUE if wish to evaluate. default is TRUE"/>	
+			<param name="FITMODELRESULT" type="hidden" value="tex" help="Set tex if wish to write in output pdf file. default is tex"/>
+			<param name="FITMODELECHO" type="hidden" value="FALSE" help="set True if wish to print .default is False"/>
+			<param name="MODELDESCRECHO" type="hidden" value="FALSE" help="set True if wish to print .default is False"/>
+			<param name="MODELDESCRRESULT" type="hidden" value="tex" help="Set tex if wish to write in output pdf file. default is tex"/>
+			<param name="RESAMPTABLEECHO" type="hidden" value="FALSE" help="set True if wish to print .default is False"/>
+			<param name="RESAMPTABLERESULT" type="hidden" value="tex" help="Set tex if wish to write in output pdf file. default is tex"/>
+			<param name="PROFILEPLOTECHO" type="hidden" value="FALSE" help="set True if wish to print .default is False"/>
+			<param name="PROFILEPLOTFIG" type="hidden" value="TRUE" help="set TRUE if wish to evaluate. default is TRUE"/>	
+			<param name="STOPWORKERSECHO" type="hidden" value="FALSE" help="set True if wish to print .default is False"/>
+			<param name="STOPWORKERSRESULT" type="hidden" value= "hide" help="Set tex if wish to write in output pdf file. default is hide"/>
+			<param name="TESTPREDRESULT" type="hidden" value= "tex" help="Set tex if wish to write in output pdf file. default is tex"/>
+ 			<param name="TESTPREDECHO" type="hidden" value="FALSE" help="set True if wish to print. default is False"/>
+			<param name="CLASSPROBSTEXRESULT" type="hidden" value="tex" help="Set tex if wish to write in output pdf file. default is tex"/>
+			<param name="CLASSPROBSTEXECHO" type="hidden" value="FALSE" help="set True if wish to print .default is False"	/>
+			<param name="CLASSPROBSTEXRESULT1" type="hidden" value="hide" help="Set tex if wish to write in output pdf file. default is hide"/>
+			<param name="CLASSPROBSTEXECHO1" type="hidden" value="FALSE" help="set True if wish to print .default is False"	/>
+			<param name="SAVEDATAECHO" type="hidden" value="FALSE" help="set True if wish to print .default is False"/>
+			<param name="SAVEDATARESULT" type="hidden" value="tex" help="Set tex if wish to write in output pdf file. default is tex"/>
+        	</when>
+
+        	<when value="Advance">
+        		<param name="GETDATAINFOEVAL" type="hidden" value="TRUE" help="set TRUE if wish to evaluate. default is TRUE" />
+        		<param name="GETDATAINFOECHO" type="hidden" value="FALSE"  help="set True if wish to print. default is False"/>
+        		<param name="GETDATAINFORESULT" type="hidden" value="tex" help="Set tex if wish to write in output pdf file. default is tex"/>
+	
+        		<conditional name="CON1">   
+          			<param name="PARAMAETERS1" type="select" label="1. REMOVE MISSING VALUES FROM THE INPUT DATA">
+                        		<option value="YES">YES </option>
+                        		<option value="NO" selected="true">NO </option>
+                		</param>
+
+                		<when value="YES">
+        				<param name="MISSINGFILTEREVAL" type="hidden" value= "TRUE" help="set TRUE if wish to evaluate. default is TRUE"/>
+					<param name="MISSINGFILTERECHO" type="select" label="1(i). Write Code in Document" help="set True if wish to print .default is False"	>
+						<option value="FALSE" selected="true">false</option>
+						<option value="TRUE">true</option>
+					</param>
+					<param name="MISSINGFILTERRESULT" type="select" label="1(ii). Write Result in document" help="Set tex if wish to write in output pdf file. default is tex">
+						<option value="hide">hide-result will not written in file</option>
+						<option value="tex" selected="true">tex-result will written in file</option>
+   					</param>
+					<param name="MISSINGFILTERTHRESHC" type="select" label="1(iii). Set Cutoff Value for Missing Data value Columwise" help="For column wise default is 0.1 means column which has missing value more than 10% will be removed ">
+						<option value="0.1">0.1</option>
+						<option value="0.2">0.2</option>
+						<option value="0.25">0.25</option>
+						<option value="0.3">0.3</option>
+						<option value="0.35">0.35</option>
+						<option value="0.4">0.4</option>
+						<option value="0.45">0.45</option>
+						<option value="0.5">0.5</option>
+						<option value="0.55">0.55</option>
+						<option value="0.6">0.6</option>
+						<option value="0.65">0.65</option>
+						<option value="0.7">0.7</option>
+						<option value="0.75">0.75</option>
+						<option value="0.8">0.8</option>
+					</param>
+					<param name="MISSINGFILTERTHRESHR" type="select" label="1(iv). Set Cutoff Value for Missing Data Value Rowwise " help="For row wise default is 0.1 means row having more than 10% missing values will be removed">
+						<option value="0.1">0.1</option>
+						<option value="0.2">0.2</option>
+						<option value="0.25">0.25</option>
+						<option value="0.3">0.3</option>
+						<option value="0.35">0.35</option>
+						<option value="0.4">0.4</option>
+						<option value="0.45">0.45</option>
+						<option value="0.5">0.5</option>
+						<option value="0.55">0.55</option>
+						<option value="0.6">0.6</option>
+						<option value="0.65">0.65</option>
+						<option value="0.7">0.7</option>
+						<option value="0.75">0.75</option>
+						<option value="0.8">0.8</option>
+					</param>
+				</when>
+
+				<when value="NO">
+				        <param name="MISSINGFILTEREVAL" type="hidden" value= "FALSE" help="set TRUE if wish to evaluate. default is FALSE"/>
+				        <param name="MISSINGFILTERECHO" type="hidden" value="FALSE" help="set True if wish to print .default is False"/>
+				        <param name="MISSINGFILTERRESULT" type="hidden" value="hide" help="Set tex if wish to write in output pdf file. default is hide"/>
+				        <param name="MISSINGFILTERTHRESHC" type="hidden" value="0"  />
+				        <param name="MISSINGFILTERTHRESHR" type="hidden" value="0" />
+
+				</when>
+			</conditional>
+
+	        	<param name="PCAEVAL" type="hidden" value="TRUE" help="set TRUE if wish to evaluate. default is TRUE"/>
+        		<param name="PCAECHO" type="hidden" value="FALSE" help="set True if wish to print. default is False"/>
+        		<param name="PCARESULT" type="hidden" value="hide" help="Set tex if wish to write in output pdf file. default is hide"/>
+        		<param name="PCACOMP" type="select" label="2. FIND NUMBER OF PRINCIPLE COMPONENT" help="performs PCA and gives number of PC. Default is 3 ">
+                		<option value="3">3</option>
+              	  		<option value="4">4</option>
+                		<option value="5">5</option>
+                		<option value="6">6</option>
+                		<option value="7">7</option>
+                		<option value="8">8</option>
+                		<option value="9">9</option>
+                		<option value="10">10</option>
+       			</param>
+        		<param name="PCAPLOTEVAL" type="hidden" value="TRUE" help="set TRUE if wish to plot PCA. default is TRUE"/>
+	        	<param name="PCAPLOTECHO" type="hidden" value="FALSE" help="Set True if wish to Print .default is False"/>
+	        	<param name="PCAPLOTRESULT" type="hidden" value="tex" help="Set tex if wish to write in output pdf file. default is tex"/>
+        		<param name="PCAPLOTFIG" type="hidden" value="TRUE" help="set TRUE if wish to evaluate. default is TRUE"/>
+
+ 			<conditional name="CON2">
+          			<param name="PARAMAETERS2" type="select" label="3. CUSTOMIZE PARAMETERS FOR DATA SPLITTING " help="splits data in test and train set.">
+                        		<option value="YES2">YES </option>
+                        		<option value="NO2" selected="true">NO </option>
+				</param>
+
+				<when value="YES2">
+   					<param name="INITIALDATASPLITEVAL" type="hidden" value= "TRUE" help="set TRUE for splitting in test and train set.default is True"/>
+   					<param name="SAAMPLING" type="select"  label="3(i). Select Sampling Method" help="Defualt is with No sampling. you may choose downsample or upsample" >
+		                		<option value="garBage" selected="true">No Sampling</option>
+		                		<option value="downsampling">downsample</option>
+		                		<option value="upsampling">upsample</option>
+		       	 		</param>
+					<param name="INITIALDATASPLITECHO" type="select" label="3(ii). Write Code in Document" help="set True if wish to print .default is False"      >
+		                		<option value="FALSE">false</option>
+		             	   		<option value="TRUE">true</option>
+		        		</param>
+		       	 		<param name="INITIALDATASPLITRESULT" type="select" value="tex" label="3(iii).  Write Result in document" help="Set tex if wish to write in output pdf file. default is tex">
+		                		<option value="tex" selected="true">tex-result will written in file</option>
+		                		<option value="hide">hide-result will not written in file</option>
+		        		</param>
+		    			<param name="PERCENT" type="select" label="3(iv) .Set Value at Which Data Will be Splitted in Train and Test Set" help="default is 0.8">
+		                		<option value="0.8">0.8</option>
+		                		<option value="0.75">0.75</option>
+		                		<option value="0.6">0.6</option>
+		                		<option value="0.5">0.5</option>
+		                		<option value="2">use entire data set</option>
+					</param>	
+				</when>
+
+				<when value="NO2">
+					<param name="INITIALDATASPLITEVAL" type="hidden" value= "TRUE" help="set TRUE for splitting in test and train set.default is True"/>
+        				<param name="INITIALDATASPLITECHO" type="hidden" value="FALSE" help="set True if wish to print .default is False"/>
+		        		<param name="SAAMPLING" type="hidden" value="garBage" help="default is with No sampling"/>
+	        			<param name="INITIALDATASPLITRESULT" type="hidden" value="tex"  help="Set tex if wish to write in output pdf file. default is tex"/>
+	        			<param name="PERCENT" type="hidden" value="0.8" help="default is 0.8"/>
+				</when>
+			</conditional>  
+
+        		<conditional name="CON3">
+          			<param name="PARAMAETERS3" type="select" label="4. REMOVE NEAR ZERO VARIANCE " help="removes NZV from train and test set.">
+           				<option value="YES3">YES </option>
+         	   			<option value="NO3" selected="true">NO </option>
+				</param>
+
+				<when value="YES3">
+    	  				<param name="NZVEVAL" type="hidden" value="TRUE" help="set TRUE if wish to evaluate. default is TRUE"/>
+      					<param name="NZVECHO" type="select" label="4(i).  Write Code in Document" help="set True if wish to print .default is False">
+			       			<option value="FALSE">false</option>
+			                	<option value="TRUE">true</option>
+		        		</param>
+	 				<param name="NZVRESULT" type="select" label="4(ii).  Write Result in document" help="Set tex if wish to write result in output pdf file. default is tex">
+						<option value="hide">hide-result will not written in file</option>
+						<option value="tex" selected="true">tex-result will written in file</option>
+   	 				</param>
+				</when>
+
+				<when value="NO3">
+       					<param name="NZVEVAL" type="hidden" value="FALSE" help="set TRUE if wish to evaluate. "/>
+	       				<param name="NZVECHO" type="hidden" value="FALSE" help="set TRUE if wish to evaluate. "/>
+       					<param name="NZVRESULT" type="hidden" value="hide" help="set TRUE if wish to evaluate."/>
+				</when>
+			</conditional>
+
+			<!--param name="NZVECHO" type="select" label="Write Code in Document" help="set True if wish to print .default is False">
+				<option value="FALSE">false</option>
+				<option value="TRUE">true</option>
+			</param-->
+
+ 			<conditional name="CON4">
+        			<param name="PARAMAETERS4" type="select" label="5. REMOVE CORRELATED VALUES" help="removes correlated attributes from train and test set.">
+           				<option value="YES4">YES </option>
+            				<option value="NO4" selected="true">NO </option>
+				</param>
+
+				<when value="YES4">
+					<param name="CORRFILTEREVAL" type="hidden" value="TRUE" help="set TRUE if wish to evaluate. default is TRUE"/>
+					<param name="THRESHHOLDCOR" type="select" label="5(i). cutoff for correlated Value " help="set according to need .default is 0.75 means attributes have 75% or more correlation are ommited from the data">
+		       		 		<option value="0.75">0.75</option>
+                				<option value="0.4">0.4</option>
+              		  			<option value="0.45">0.45</option>
+                				<option value="0.5">0.5</option>
+                				<option value="0.55">0.55</option>
+                				<option value="0.6">0.6</option>
+                				<option value="0.65">0.65</option>
+                				<option value="0.7">0.7</option>
+                				<option value="0.8">0.8</option>
+                				<option value="0.85">0.85</option>
+                				<option value="0.9">0.9</option>
+                				<option value="0.95">0.95</option>
+	        			</param>
+   					<param name="CORRFILTERECHO" type="select" label="5(ii).  Write Code in Document" help="set True if wish to print .default is False"    >
+                				<option value="FALSE">false</option>
+                				<option value="TRUE">true</option>
+        				</param>
+   					<param name="CORRFILTERRESULT" type="select" label="5(iii).  Write Result in document" help="Set tex if wish to write in output pdf file. default is tex">
+                				<option value="hide">hide-result will not written in file</option>
+                				<option value="tex" selected="true">tex-result will written in file</option>
+        				</param>
+				</when>
+		
+				<when value="NO4">
+        				<param name="CORRFILTEREVAL" type="hidden" value="FALSE"/>
+        				<param name="CORRFILTERRESULT" type="hidden" value="hide" />
+        				<param name="CORRFILTERECHO" type="hidden" value="FALSE" />
+        				<param name="THRESHHOLDCOR" type="hidden" value="0" />
+				</when>
+			</conditional>
+
+			<conditional name="CON5">
+    				<param name="PARAMAETERS5" type="select" label="6. PERFORM CENTERING AND SCALING OF DATA " help="centering and scaling of  train and test set.">
+           				<option value="YES5">YES </option>
+            				<option value="NO5" selected="true">NO </option>
+                		</param>
+
+				<when value="YES5">
+ 					<param name="PREPROCEVAL" type="hidden" value="TRUE" help="set TRUE if wish to evaluate. default is TRUE"/>
+  					<param name="PREPROCECHO" type="select" label="6(i).  Write Code in Document" help="set True if wish to write code in document .default is False"       >
+                				<option value="FALSE">false</option>
+                				<option value="TRUE">true</option>
+      		  			</param>
+        				<param name="PREPROCRESULT" type="select" label="6(ii).  Write Result in document " help="Set tex if wish to write result in output pdf file. default is tex">
+                				<option value="hide">hide-result will not written in file</option>
+                				<option value="tex" selected="true">tex-result will written in file</option>
+       		 			</param>
+				</when>
+		
+				<when value="NO5">
+        		 		<param name="PREPROCEVAL" type="hidden" value="FALSE"/>
+        				<param name="PREPROCECHO" type="hidden" value="FALSE" />
+        				<param name="PREPROCRESULT" type="hidden" value="hide" />
+				</when>
+	
+			</conditional>
+
+    			<param name="SETUPWORKERSEVAL" type="hidden" value="TRUE" help="set TRUE if wish to evaluate. default is False"/>    
+    			<param name="SETUPWORKERSECHO" type="hidden" value="FALSE" help="set True if wish to print .default is False" />
+  	  		<param name="NUMWORKERS" type="select" label="7. SET NUMBER OF PROCESSORS " help ="default is 1">
+        		       	<option value="1">1</option>
+               			<option value="2">2</option>
+            		   	<option value="4">4</option>
+               			<option value="6">6</option>
+               			<option value="8">8</option>
+               			<option value="16">16</option>
+    			</param>
+ 	   		<param name="SETUPWORKERSRESULT" type="hidden" value="hide" />
+               	 
+  			<conditional name="CON6">
+   				<param name="PARAMAETERS6" type="select" label="8. CUSTOMIZE RESAMPLING PARAMETERS" help="resampling for cross validation">
+           				<option value="YES6">YES </option>
+            				<option value="NO6" selected="true">NO </option>
+				</param>
+	
+				<when value="YES6">
+  					<param name="SETUPRESAMPLINGECHO" type="select" label="8(i).  write code for resampling" help="set True if wish to print .default is False">
+               	 				<option value="FALSE">false</option>
+               		 			<option value="TRUE">true</option>
+        				</param>
+       			 		<param name="SETUPRESAMPLINGRESULT" type="select" label="8(ii).  Write Result in document " help="Set tex if wish to write in output pdf file. default is hide">
+                				<option value="hide">hide-result will not written in file</option>
+                				<option value="tex">tex-result will written in file</option>
+        				</param>
+ 
+	   				<param name="RESAMPNAME" type="select" label="8(iii). select  Resample method for cross validation" help="default is boot632 ">
+        	        			<option value="boot632" selected="true">boot632</option>
+       	        	 			<option value="boot">boot</option>
+       		         			<option value="cv">cv</option>
+       	        	 			<option value="repeatedcv">repeatedcv</option>
+                				<option value="LOOCV">LOOCV - leave one out</option>
+        				</param>
+
+       					<param name="RESAMPLENUMBER" type="select" label="8(iv).  Set Number of times Resample" help="default is 10 ">
+                				<option value="10" selected="true">10</option>
+                				<option value="5">5</option>
+                				<option value="15">15</option>
+                				<option value="20">20</option>
+                				<option value="25">25</option>
+        				</param>
+
+        				<param name="NUMREPEAT" type="select" label="8(v).  Set Number of times to repeat" help="default is 3 ">
+               					<option value="3" selected="true">3</option>
+                				<option value="1">1</option>
+                				<option value="5">5</option>
+                				<option value="10">10</option>
+					</param>
+	
+       		 			<param name="RESAMPLENUMBERPERCENT" type="select" label="8(vi).  Set Percent splitting of data for resampling" help="default is 0.75">
+                				<option value="0.75" selected="true">0.75</option>
+                				<option value="0.4">0.4</option>
+                				<option value="0.45">0.45</option>
+                				<option value="0.5">0.5</option>
+                				<option value="0.55">0.55</option>
+                				<option value="0.6">0.6</option>
+                				<option value="0.65">0.65</option>
+                				<option value="0.7">0.7</option>
+                				<option value="0.8">0.8</option>
+        				</param>
+				</when>
+		
+				<when value="NO6">
+        				<param name="SETUPRESAMPLINGECHO" type="hidden" value="FALSE" help="set True if wish to print .default is False"/>
+        				<param name="SETUPRESAMPLINGRESULT" type="hidden" value="hide" help="Set tex if wish to write in output pdf file. default is hide"/>
+        				<param name="RESAMPNAME" type="hidden" value="boot632" label="Set type of resampling for cross validation" help="default is boot632"/>
+        				<param name="RESAMPLENUMBER" type="hidden" value="10" label="Set Number of Times to Resample" help="default is 10"/>
+       			 		<param name="NUMREPEAT" type="hidden" value="3" label="Set Number of Times to run" help="default is 3"/>
+        				<param name="RESAMPLENUMBERPERCENT" type="hidden" value="0.75" help="default is 0.75"/>
+				</when>
+
+			</conditional>
+
+	        	<param name="SETUPGRIDRESULT" type="hidden" value="hide" help="Set tex if wish to write in output pdf file. default is hide"/>
+        		<param name="SETUPGRIDECHO" type="hidden" value="FALSE" help="set True if wish to print .default is False"/>
+        		<param name="SETUPGRIDSIZE" type="select" label="9.  SET SIZE OF GRID" help="default is 3 ">
+        		        <option value="3">3</option>
+               		 	<option value="4">4</option>
+               		 	<option value="5">5</option>
+              			<option value="6">6</option>
+                		<option value="7">7</option>
+                		<option value="8">8</option>
+                		<option value="9">9</option>
+                		<option value="10">10</option>
+                		<option value="11">11</option>
+                		<option value="12">12</option>
+                		<option value="13">13</option>
+                		<option value="14">14</option>
+                		<option value="15">15</option>
+                		<option value="16">16</option>
+                		<option value="17">17</option>
+                		<option value="18">18</option>
+                		<option value="19">19</option>
+                		<option value="20">20</option>
+        		</param>
+	
+    			<param name="FITMODELEVAL" type="boolean" checked="true" value="true" label="10. BUILD A MODEL AND WRITE RESULT IN DOCUMENT" help="default is TRUE"/>   
+    			<param name="FITMODELRESULT" type="hidden" value="tex" />
+    			<param name="FITMODELECHO" type="select" label="10(i).  Write Code for model building in Document" help="set True if wish to write code in document .default is False"      >
+            			<option value="FALSE">false</option>
+            			<option value="TRUE">true</option>
+        		</param>
+    			<param name="MODELDESCRECHO" type="select" label="10(ii).  Write code for Model Description " help="set True if wish to print .default is False" >
+                		<option value="FALSE">false</option>
+                		<option value="TRUE">true</option>
+        		</param>
+   	 		<param name="MODELDESCRRESULT" type="hidden" value="tex" help="Set tex if wish to write in output pdf file. default is tex"/>
+    			<param name="RESAMPTABLEECHO" type="hidden" value="FALSE" help="set True if wish to print .default is False"/>
+        		<param name="RESAMPTABLERESULT" type="hidden" value="tex" help="Set tex if wish to write in output pdf file. default is tex"/>
+    		    	<param name="PROFILEPLOTECHO" type="hidden" value="FALSE" help="set True if wish to print .default is False"/>
+       		 	<param name="PROFILEPLOTFIG" type="hidden" value="TRUE" help="set TRUE if wish to evaluate. default is TRUE"/>
+       		 	<param name="STOPWORKERSECHO" type="hidden" value="FALSE" help="set True if wish to print .default is False"/>
+       		 	<param name="STOPWORKERSRESULT" type="hidden" value= "hide" help="Set tex if wish to write in output pdf file. default is hide"/>
+       	 		<param name="TESTPREDRESULT" type="hidden" value= "tex" help="Set tex if wish to write in output pdf file. default is tex"/>
+        		<param name="TESTPREDECHO" type="hidden" value="FALSE" help="set True if wish to print. default is False"/>
+        		<param name="CLASSPROBSTEXRESULT" type="hidden" value="tex" help="Set tex if wish to write in output pdf file. default is tex"/>
+        		<param name="CLASSPROBSTEXECHO" type="hidden" value="FALSE" help="set True if wish to print .default is False"  />
+        		<param name="CLASSPROBSTEXRESULT1" type="hidden" value="hide" help="Set tex if wish to write in output pdf file. default is hide"/>
+        		<param name="CLASSPROBSTEXECHO1" type="hidden" value="FALSE" help="set True if wish to print .default is False" />
+        		<param name="SAVEDATAECHO" type="hidden" value="FALSE" help="set True if wish to print .default is False"/>
+       	 		<param name="SAVEDATARESULT" type="hidden" value="tex" help="Set tex if wish to write in output pdf file. default is tex"/>
+	
+		</when>
+	</conditional>
+</inputs>
+
+<outputs>
+	<data format="RData" label="$METHOD Model" name="model" />
+	<data format="pdf"  label="Document for $METHOD" name="document" />
+	<data format="RData"  label="Datasets used for model building " name="datasets" />
+</outputs>		
+
+<help>
+
+.. class:: infomark
+
+
+
+**Instruction**
+
+----------
+
+Users may change any parameter as their requirement. For normal practice 
+
+user required to provide only input csv file and method for model building.
+
+More details are given in user manual.Please click here
+
+
+</help>
+<tests>
+     <test>
+          <param name="METHOD"  value="pls"  />
+          <param name="RDATA" value="desc.RData"/>
+          <param name="PARAMETERS"  value="basic" />
+          <output name="model"  file="MODEL.RData" compare="sim_size" delta="20000" />
+          <output name="datasets" file="datasets.RData" compare="sim_size" delta="20000" />
+          <output name="document"  file="MODEL.pdf" compare="sim_size" delta="2000000" >
+          	<!--extra_files type="file" name="cmd.log.1" value="test2/cmd.log.1" compare="sim_size" delta="20000"/>
+          	<extra_files type="file" name="cmd.log.2" value="test2/cmd.log.2" compare="sim_size" delta="20000"/>
+          	<extra_files type="file" name="dataset_2.dat" value="test2/dataset_2.dat" compare="sim_size" delta="80000"/>
+          	<extra_files type="file" name="dtaset_3.dat" value="test2/dtaset_3.dat" compare="sim_size" delta="80000"/-->
+          	<extra_files type="file" name="obsPred.pdf" value="test2/obsPred.pdf" compare="sim_size" delta="80000" />
+          	<extra_files type="file" name="result-doc.aux" value="test2/result-doc.aux" compare="sim_size" delta="80000"/>
+          	<extra_files type="file" name="result-doc-densityplot.pdf" value="test2/result-doc-densityplot.pdf" compare="sim_size" delta="80000"/>
+          	<extra_files type="file" name="result-doc.log" value="test2/result-doc.log" compare="sim_size" delta="80000"/>
+          	<extra_files type="file" name="result-doc.out" value="test2/result-doc.out" compare="sim_size" delta="80000"/>
+          	<extra_files type="file" name="result-doc-pcaPlot.pdf" value="test2/result-doc-pcaPlot.pdf" compare="sim_size" delta="80000"/>
+          	<extra_files type="file" name="result-doc.pdf" value="test2/result-doc.pdf" compare="sim_size" delta="80000"/>
+          	<extra_files type="file" name="result-doc-profilePlot.pdf" value="test2/result-doc-profilePlot.pdf" compare="sim_size" delta="80000"/>
+          	<extra_files type="file" name="result-doc.Rnw" value="test2/result-doc.Rnw" compare="sim_size" delta="80000"/>
+          	<extra_files type="file" name="result-doc.tex" value="test2/result-doc.tex" compare="sim_size" delta="80000"/>
+          	<!--extra_files type="file" name="pls-Fit.RData" value="test2/pls-Fit.RData" compare="sim_size" delta="9000000"/-->
+          </output>
+    </test>
+</tests>
+
+</tool>

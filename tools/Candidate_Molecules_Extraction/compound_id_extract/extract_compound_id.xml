@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<tool id="extract_compound_id" name="Extract Compound IDs From Prediction Result" version="1.0">
+<description>This tool extract the compound name/ids from prediction result</description>
+<stdio>
+	<exit_code range="1:" />
+</stdio>
+
+<command><![CDATA[ 
+
+awk -F '\t' '{print $1}' $predictionfile | sed '1d' | sed 's/"//g' | sed -e 's/^[ \t]*//;s/[ \t]*$//' | paste -sd "," - > $extracted_IDs ;
+
+]]></command>
+
+<inputs>
+	<param name="predictionfile" type="data" format="txt,csv,tabular" label="Predition Result File" help ="upload gcac prediction result file obtained from the tool 'Extract_Compound_IDs_From_Prediction_Result_based_on_scores'" /> 
+</inputs>
+
+<outputs>
+	<data name="extracted_IDs" format="txt" label="Ids-${predictionfile.name}" />
+</outputs>
+<tests>
+        <test>
+        	<param name="predictionfile" value="selected_compounds.txt"  />
+         	<output name="extracted_IDs" file="extracted_ids.txt" compare="sim_size" delta="2000" />
+	</test>
+</tests>
+<help></help>
+</tool>

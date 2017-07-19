@@ -1,0 +1,30 @@
+<tool id="merge_activity_files" name="Merge Activity files" version="1.0">
+<description>"Merge data files of Active and Inactive compounds "</description>
+<stdio>
+	<exit_code range="1:" />
+</stdio>
+<command interpreter="perl">merge_activity_files.pl $Input1 $Activity1 $Input2 $Activity2 $Merged_file</command>
+<inputs>
+	<param format="csv" name="Input1" type="data" label="Descriptor File 1" help="Upload Active/Inactive descriptor file in csv format"/>
+ 	<param name="Activity1" type="text" value="Active" label="Select type of molecules" help="write something which defines data eg active,positive,inactive,negative,etc." >
+   		<validator type="empty_field" message="This field can't be left blank"/>
+        </param>
+ 	<param format="txt" name="Input2" type="data" label="Descriptor File 2" help="Upload Active/Inactive descriptor file in csv format"/>
+ 	<param name="Activity2" type="text" value="Inactive" label="Select type of molecules" help="write something which defines data eg active,positive,inactive,negative,etc.">
+   		<validator type="empty_field" message="This field can't be left blank"/>
+        </param>
+</inputs>
+<outputs>
+    <data format="csv" name="Merged_file" label="Merged Mega Descriptor File "/> 
+</outputs>
+<tests>
+    <test>
+        <param name="Input1" value="actives_with_names.csv"  />
+        <param name="Activity1"  value="Active"  />
+        <param name="Input2" value="inactives_with_names.csv" />
+        <param name="Activity2"  value="Inactive"  />
+        <output name="Merged_file" file="merged.csv" compare="sim_size" delta="90000000" />
+    </test>
+</tests>
+<help>Provide descriptor files of active/positive and inactive/negative molecules and assign them properly.</help>
+</tool>
