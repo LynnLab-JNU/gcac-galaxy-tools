@@ -1,0 +1,95 @@
+<tool id="feature_selection" name="Feature Selector" version="1.0">
+
+<description>selects best features subset</description>
+
+<requirements>
+    	<requirement type="package" version="3.2.1">R</requirement>
+    	<requirement type="package" version="1.0">carettools</requirement>
+</requirements>
+
+<stdio>
+        <exit_code range="1:" />
+</stdio>
+
+<command interpreter="Rscript">feature_selection.R $input $profile $finalset $function1 $resampling $repeat $number $corcutoff $SAMPLING \${GALAXY_SLOTS:-1} >/dev/null 2>&amp;1 </command>
+
+<inputs>
+	<param name="input"  type="data" format="rdata" label="Select input data file" help="input .RData file" />
+	<param name="SAMPLING" type="select"  label="Select Sampling Method for imbalanced data" help="Defualt is with No sampling. you may choose downsample or upsample" >
+                <option value="garBage" selected="true">No Sampling</option>
+                <option value="downsampling">downsample</option>
+                <option value="upsampling">upsample</option>
+        </param>
+	<param name="function1" type="select" display="radio" label="Select appropriate function for algorithm"  >
+                <option value="rfFuncs" selected="true">random forest based function </option>
+                <option value="lmFuncs">linear model based function</option>
+                <option value="treebagFuncs">treebag(CART) based function</option>
+                <option value="nbFuncs">neive bayes based function</option>
+	</param>
+
+	<param name="corcutoff"  type="float" value= "0.8" min="0.0" max = "1.0" label="Select correlation cutoff" help="values bewteen 0-1. fileds above cufoff value removed from data " />
+	<param name="resampling" type="select" label="Select appropriate resampling method"  >
+                <option value="repeatedcv" selected="true">repeatedcv </option>
+                <option value="boot">boot</option>
+                <option value="cv">cv</option>
+                <option value="boot632">boot632</option>
+	</param>
+
+	<param name="repeat" type="select" label="Set Number of times to repeat" help="default is 3 ">
+               <option value="3" selected="true">3</option>
+               <option value="5">5</option>
+               <option value="7">7</option>
+               <option value="10">10</option>
+	</param>
+	<param name="number" type="select" label="Set Number of times Resample" help="default is 10">
+                <option value="10" selected="true">10</option>
+                <option value="5">5</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25">25</option>
+	</param>
+</inputs>
+
+<outputs>
+	<data format="data" name="profile"  label="$function1-profile" />
+	<data format="rdata" name="finalset" label="Selected_feature.RData "/>
+</outputs>
+
+<tests>
+   <test>
+          <param name="input" value="testinput.RData"/>
+          <param name="function1"  value="rfFuncs" />
+          <param name="corcutoff"  value="0.6" />
+          <param name="resampling"  value="repeatedcv" />
+          <param name="repeat"  value="1" />
+          <param name="number"  value="5" />
+          <param name="SAMPLING"  value="garb" />
+          <param name="cores"  value="1" />
+          <output name="profile" file="rfprofile.RData" compare="sim_size" delta="2000000" />
+          <output name="finalset" file="selected_fet.RData" compare="sim_size" delta="2000000"/>
+    </test>
+</tests>
+
+<help>
+
+.. class:: infomark
+
+**RFE based feature selection for classification and regression**
+
+Input file must be  RData file obtained by converting csv file in to RData.
+
+output  "Selected_feature.RData"  file used for model building purpose.While profile
+
+represents feature selection model.
+
+Correlation cutoff value is desired for choosing independent variables For example
+
+Cutoff value = 0.8 removes all descriptors sharing equal or highet correlation values.
+
+User may choose varous resampling methods in combination with repeats and times of resample.
+
+</help>
+
+
+
+</tool>

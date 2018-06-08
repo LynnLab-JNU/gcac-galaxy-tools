@@ -1,0 +1,9 @@
+categories:
+        - Tool Dependency Packages
+description: Contains a tool dependency definition that downloads and install padeldescriptor.
+long_description: |
+        The long description goes here ... 
+name: package_padeldescriptor_1_0 
+owner: anmoljh
+remote_repository_url: 
+type: tool_dependency_definition

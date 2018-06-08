@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="padeldescriptor" version="1.0">
+            <repository changeset_revision="ffc14810780a" name="package_padeldescriptor_1_0" owner="anmoljh" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu/" />
+    </package>
+</tool_dependency>

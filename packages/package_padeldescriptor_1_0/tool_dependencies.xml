@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="padeldescriptor" version="1.0">
+     	<install version="1.0">
+            <actions>
+		<action type="download_by_url" sha256sum="9cfba80da884d67e79dc9777fbe842f84ee08b5457251eda37e5a2d8cfd80637">
+			https://raw.githubusercontent.com/LynnLab-JNU/download_repo/master/PaDEL-Descriptor/PaDEL-Descriptor.zip
+		</action>
+		<action type="move_directory_files">
+			<source_directory>.</source_directory>
+			<destination_directory>$INSTALL_DIR</destination_directory>
+		</action>
+                <action type="set_environment">
+                        <environment_variable name="PADELPATH" action="set_to">$INSTALL_DIR</environment_variable>
+                </action>
+	    </actions>
+        </install>	
+	<readme>
+		padeldescriptor installed successfully.
+	</readme>
+    </package>	
+</tool_dependency>

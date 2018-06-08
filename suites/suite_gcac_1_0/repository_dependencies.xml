@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<repositories description="This is a metapackage that will install various tools from GCAC Module.">
+  <repository changeset_revision="ae1ad90ca587" name="mayatool_extract" owner="anmoljh" toolshed="https://toolshed.g2.bx.psu.edu" />
+  <repository changeset_revision="a45e6db3fdf0" name="compound_id_extract" owner="anmoljh" toolshed="https://toolshed.g2.bx.psu.edu" />
+  <repository changeset_revision="1de0e9f0367d" name="candidate_compound_select" owner="anmoljh" toolshed="https://toolshed.g2.bx.psu.edu" />
+  <repository changeset_revision="f3aeeb15d4cc" name="feature_selection" owner="anmoljh" toolshed="https://toolshed.g2.bx.psu.edu" />
+  <repository changeset_revision="cea1634edfd8" name="activity_predict" owner="anmoljh" toolshed="https://toolshed.g2.bx.psu.edu" />
+  <repository changeset_revision="247d404ffbcf" name="rcaret_classification_model" owner="anmoljh" toolshed="https://toolshed.g2.bx.psu.edu" />
+  <repository changeset_revision="49d7eb9e1092" name="csv_to_rdata" owner="anmoljh" toolshed="https://toolshed.g2.bx.psu.edu" />
+  <repository changeset_revision="6fd1efe69a78" name="redundant_entries_remove" owner="anmoljh" toolshed="https://toolshed.g2.bx.psu.edu" />
+  <repository changeset_revision="0a71d32d6e51" name="activity_files_merge" owner="anmoljh" toolshed="https://toolshed.g2.bx.psu.edu" />
+  <repository changeset_revision="d35153edd310" name="padel_descriptor_calculation" owner="anmoljh" toolshed="https://toolshed.g2.bx.psu.edu" />
+</repositories>

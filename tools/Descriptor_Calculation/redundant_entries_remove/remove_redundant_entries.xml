@@ -1,0 +1,26 @@
+<tool id="remove_reduandant_entries" name="Remove Redundancy" version="1.0">
+    <description>removes redundant entires of molecules</description>
+    <requirements>
+        <requirement type="package" version="3.2.1">R</requirement>
+    </requirements>
+    <stdio>
+            <exit_code range="1:" />
+    </stdio>
+    <command interpreter="Rscript">remove_redundant_entries.R $Input1 $Non_redudant_mega_file</command>
+    <inputs>
+	    <param format="txt" name="Input1" type="data" label="Merged Descriptor File" help="csv format"/>
+    </inputs>
+    <outputs>
+	    <data format="csv" name="Non_redudant_mega_file" label="Non-redundant Mega Descriptor File"/> 
+    </outputs>
+    <tests>
+        <test>
+            <param name="Input1"  value="merged.csv"  />
+            <output name="Non_redudant_mega_file" file="non_redundant.csv" compare="sim_size" delta="9000000" />
+        </test>
+    </tests>
+
+    <help>
+        run command with Descriptor file and in csv format only .output file will be in CSV format.
+    </help>
+</tool>

@@ -1,0 +1,9 @@
+---
+description: Metapackage for GCAC module.
+long_description: |
+              This is a metapackage that will install various tools from GCAC Module.
+name: suite_gcac_1_0
+owner: anmoljh
+type: repository_suite_definition 
+homepage_url: 
+remote_repository_url:  

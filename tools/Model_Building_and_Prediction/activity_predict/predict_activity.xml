@@ -1,0 +1,70 @@
+<tool id="predict_activity" name="Predict Activity" version="1.0">
+    <description>predicts activity based on given model</description>
+    <requirements>
+        <requirement type="package" version="3.2.1">R</requirement>
+        <requirement type="package" version="1.0">carettools</requirement>
+    </requirements>
+    <stdio>
+        <exit_code range="1:" />
+    </stdio>
+
+    <command interpreter="Rscript">predict_activity.R  $file1 $model $output1  2>/dev/null </command>
+
+    <inputs>
+        <param name="model" type="data" format="rdata" label="Select Model" help="Select built model obtained from caret tool 'Create script from the template file'." />
+        <param name="file1" type="data" format="csv"  label="Select file have descriptor data for activity prediction" help="csv format" />
+    </inputs>
+
+    <outputs>
+        <data format="txt" name="output1" label="Prediction on $file1.name" />
+    </outputs>
+
+    <tests>
+ 	<test>
+          	<param name="model" value="MODEL.rdata"  />
+          	<param name="file1" value="Descriptors_File_of_prediction_set.csv" />
+          	<output name="output1" file="Prediction_on_Descriptors_File_of_prediction_set.txt" compare="sim_size" delta="90000" />
+ 	</test>
+    </tests>
+
+<help>
+
+.. class:: infomark
+
+Make sure this file **must** contain **all** or **more features** than **input** "csv file" used for **model building**
+
+----------
+
+**Input "csv file" must be as follows**
+
+----------
+
+
+Example file:-
+
+
+
+# example.csv
+
+	 feature1,feature2,feature3,..,featureN
+
+ro1	234,2.3,34,7,..,0.9
+
+ro2	432,3.4,23.1,12,..,0.12
+
+ro3	692,23,12.2,19,..,0.14
+
+
+-----------
+
+**MODEL**
+
+Choose model file received from model building step.
+
+Model file has "data" file format can be seen by 
+
+clicking on output files shown in history . 
+
+</help>
+
+</tool>

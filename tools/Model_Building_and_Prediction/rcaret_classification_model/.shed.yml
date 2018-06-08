@@ -1,0 +1,9 @@
+---
+description: Build classification model using ‘caret’ R package.
+long_description: |
+              This is a long description.     
+name: rcaret_classification_model
+owner: anmoljh
+type: unrestricted 
+homepage_url: 
+remote_repository_url:  

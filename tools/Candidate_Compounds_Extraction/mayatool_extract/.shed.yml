@@ -1,0 +1,9 @@
+---
+description:  The tool provide sdf file of extracted compounds from the prediction set
+long_description: |
+              This is a long description..     
+name: mayatool_extract 
+owner: anmoljh
+type: unrestricted 
+homepage_url: 
+remote_repository_url: 
